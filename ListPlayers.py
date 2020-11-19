@@ -3,9 +3,6 @@
 import json
 import datetime 
 import boto3
-import decimal
-from boto3.dynamodb.conditions import Key, Attr
-
 
 def lambda_handler(event, context):
     dynamodb = boto3.resource('dynamodb')
@@ -17,4 +14,3 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps(table.scan())
     }
-    
